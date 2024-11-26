@@ -9,6 +9,12 @@ function addTask() {
 
     const newTask = document.createElement("li");
     newTask.textContent = taskInput.value;
+
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.onclick = () => newTask.remove();
+
+    newTask.appendChild(deleteButton);
     taskList.appendChild(newTask);
 
     taskInput.value = "";
